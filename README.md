@@ -111,4 +111,49 @@
         }
     }
     
-###     
+### Wildcards (unkown type <?>)
+* Read <? extends ClassName>
+
+        public class Main {
+            public static void main(String[] args) {
+                var instructors = new GenericList<Instructor>();
+                var users = new GenericList<User>();
+                Utils.printUsers(instructors);
+                Utils.printUsers(users);
+            }
+        }
+
+        public class Utils {
+            public static void printUsers(GenericList<? extends User> users) {
+                User user = users.get(0);
+            }
+        }
+
+        public class Instructor extends User {
+            public Instructor(int points) {
+                super(points);
+            }
+        }        
+
+* Write <? super ClassName>    
+    
+        public class Main {
+            public static void main(String[] args) {
+                var instructors = new GenericList<Instructor>();
+                var users = new GenericList<User>();
+                Utils.addToUsers(instructors); //compilation-error for this
+                Utils.addToUsers(users);
+            }
+        }
+
+        public class Utils {
+            public static void addToUsers(GenericList<? super User> users) {
+                users.add(new User(10));
+            }
+        }
+
+        public class Instructor extends User {
+            public Instructor(int points) {
+                super(points);
+            }
+        }
