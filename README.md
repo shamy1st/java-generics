@@ -85,4 +85,30 @@
         }
     }
     
+### Class Multiple Type
+
+    public class MyHashMap <K, V> {
+        private K key;
+        private V value;
+
+        public MyHashMap(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+    
+### Method Multiple Type
+
+    public class Main {
+        public static void main(String[] args) {
+            Utils.print("key1", 500);
+        }
+    }
+
+    public class Utils {
+        public static <K, V> void print(K key, V value) {
+            System.out.println(key + ": "+ value);
+        }
+    }
+    
 ###     
