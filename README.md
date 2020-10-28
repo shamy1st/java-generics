@@ -23,4 +23,16 @@
         }
     }
     
+### Constraints
+
+    //only for types Number and classes inherit from it
+    public class GenericList<T extends Number> {
+        ...
+    }
+
+    //only for types implements Comparable & Cloneable interfaces
+    public class GenericList<T extends Comparable & Cloneable> {
+        ...
+    }
+    
 ### 
