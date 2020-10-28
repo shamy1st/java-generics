@@ -1,2 +1,1 @@
-# java-generics
-Java Generics
+# Java Generics
