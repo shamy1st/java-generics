@@ -70,4 +70,19 @@
         }
     }
     
-### 
+### Generic Method
+
+    public class Main {
+        public static void main(String[] args) {
+            double max = Utils.max(1.3, 4.6);
+            System.out.println(max);
+        }
+    }
+
+    public class Utils {
+        public static <T extends Comparable<T>> T max(T first, T second) {
+            return (first.compareTo(second) > 0) ? first : second;
+        }
+    }
+    
+###     
